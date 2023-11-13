@@ -18,15 +18,20 @@ $(document).ready(function() {
     <span>${taskText}</span>
     <button class="remove-button btn btn-link" type="button" id="launcher" >Удалить</button>
     `);
+    
     listItem.find('.remove-button').on('click', function() {
-    listItem.remove();
+
+   $("#window").modal("show");
+   
+   $("#remove").on("click", function (){
+      listItem.remove();
+       })
     });
+
+
     taskList.append(listItem);
-    taskInput.val('');
+    taskInput.val();
     }
     });
     
-    $("#launcher").on("click", function() {
-        $("#window").modal("show");
-        });
-        
+   
